@@ -1,0 +1,34 @@
+#pragma once
+
+#include <ISOBMFF/ContainerBox.hpp>
+#include <ISOBMFF/FTYP.hpp>
+#include <ISOBMFF/MVHD.hpp>
+#include <ISOBMFF/MFHD.hpp>
+#include <ISOBMFF/TKHD.hpp>
+#include <ISOBMFF/META.hpp>
+#include <ISOBMFF/HDLR.hpp>
+#include <ISOBMFF/PITM.hpp>
+#include <ISOBMFF/IINF.hpp>
+#include <ISOBMFF/DREF.hpp>
+#include <ISOBMFF/URL.hpp>
+#include <ISOBMFF/URN.hpp>
+#include <ISOBMFF/ILOC.hpp>
+#include <ISOBMFF/IREF.hpp>
+#include <ISOBMFF/INFE.hpp>
+#include <ISOBMFF/IROT.hpp>
+#include <ISOBMFF/HVCC.hpp>
+#include <ISOBMFF/DIMG.hpp>
+#include <ISOBMFF/THMB.hpp>
+#include <ISOBMFF/CDSC.hpp>
+#include <ISOBMFF/COLR.hpp>
+#include <ISOBMFF/ISPE.hpp>
+#include <ISOBMFF/IPMA.hpp>
+#include <ISOBMFF/PIXI.hpp>
+#include <ISOBMFF/IPCO.hpp>
+#include <ISOBMFF/STSD.hpp>
+#include <ISOBMFF/SIDX.hpp>
+#include <ISOBMFF/FRMA.hpp>
+#include <ISOBMFF/SCHM.hpp>
+#include <ISOBMFF/TRUN.hpp>
+#include <ISOBMFF/TFHD.hpp>
+

@@ -36,3 +36,7 @@ xcuserdata
 *.csproj.user
 ipch
 .vs
+
+# CLion
+.idea
+cmake-build*
