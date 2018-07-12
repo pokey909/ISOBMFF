@@ -31,10 +31,11 @@ int main(int argc, char **argv) {
     FMP4StreamParser parser;
     parser.onFragment(fragmentCallback);
 
-
-    std::ifstream input("tests/output.m4s");
+    std::string filename = "tests/output.m4s";
+    std::ifstream input(filename);
     if (!input.is_open()) {
-        throw "SHIT";
+        std::cerr << "Could not open file " + filename << '\n';
+        return 1;
     }
 
     parser.setInputStream(&input);
