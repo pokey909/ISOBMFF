@@ -19,34 +19,20 @@ void writeToFile(const std::string &filenamePrefix, const std::vector<Frame> &fr
     }
 }
 
+void fragmentCallback(const Fragment &fragment) {
+    auto mfhd = fragment.moof->GetTypedBox<ISOBMFF::MFHD>("mfhd");
+    if (mfhd) {
+        auto sequenceNumber = mfhd->GetSequenceNumber();
+        writeToFile("frag_" + std::to_string(sequenceNumber), fragment.getFrames());
+    }
+}
+
 int main(int argc, char **argv) {
     FMP4StreamParser parser;
-
-//    FMP4StreamParser::ParsedTopLevelBoxCallback boxParsedCB = [](const ISOBMFF::Box *box) {
-//        std::cout << "Parsed: " << box->GetName() << '\n';
-//    };
-//    FMP4StreamParser::SkippedTopLevelBoxCallback boxSkippedCB = [](const std::string &box) {
-//        std::cout << "Skipped: " << box << '\n';
-//    };
-//    parser.onParsedBox("ftyp", boxParsedCB);
-//    parser.onParsedBox("sidx", boxParsedCB);
-//    parser.onParsedBox("moof", boxParsedCB);
-//    parser.onParsedBox("mdat", boxParsedCB);
-//
-//    parser.onSkippedBox("moov", boxSkippedCB);
+    parser.onFragment(fragmentCallback);
 
 
-    FMP4StreamParser::FragmentCallback fragmentCB = [](const Fragment &fragment) {
-        auto mfhd = fragment.moof->GetTypedBox<ISOBMFF::MFHD>("mfhd");
-        if (mfhd) {
-            auto sequenceNumber = mfhd->GetSequenceNumber();
-            writeToFile("frag_" + std::to_string(sequenceNumber), fragment.getFrames());
-        }
-    };
-
-    parser.onFragment(fragmentCB);
-
-    std::ifstream input("/tmp/output.m4s");
+    std::ifstream input("tests/output.m4s");
     if (!input.is_open()) {
         throw "SHIT";
     }

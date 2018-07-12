@@ -20,4 +20,4 @@ add_executable(aacExtractor tools/aacExtractor.cpp)
 target_link_libraries(mp4StreamDump isobmff boost_system)
 target_link_libraries(aacExtractor isobmff boost_system)
 
-file(COPY ${PROJECT_SOURCE_DIR}/tests/fragmented.m4s DESTINATION ${CMAKE_BINARY_DIR}/tests/)
+file(COPY ${PROJECT_SOURCE_DIR}/tests/output.m4s DESTINATION ${CMAKE_BINARY_DIR}/tests/)

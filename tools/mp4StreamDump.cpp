@@ -9,7 +9,7 @@ int main() {
 
     ISOBMFF::Parser parser;
 
-    parser.Parse("/tmp/output.m4s");
+    parser.Parse("tests/output.m4s");
 
     std::cout << *parser.GetFile() << std::endl;
     return 0;
