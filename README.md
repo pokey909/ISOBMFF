@@ -1,5 +1,5 @@
 ISOBMFF
-=======
+======
 
 [![Build Status](https://img.shields.io/travis/DigiDNA/ISOBMFF.svg?branch=master&style=flat)](https://travis-ci.org/DigiDNA/ISOBMFF)
 [![Coverage Status](https://img.shields.io/coveralls/DigiDNA/ISOBMFF.svg?branch=master&style=flat)](https://coveralls.io/r/DigiDNA/ISOBMFF?branch=master)
@@ -39,30 +39,21 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/ISO_base_media_file_format)
 Building
 --------
 
-### macOS
+To build the aac frame extractor example
+```
+# Create an arbitrary build directory and cd to it.
+mkdir build && cd build
+cmake ..
+cmake --build --target aacExtractor
+```
 
-An Xcode project is provided for convenience, containing the following targets:
-
- - `ISOBMFF`: The main cross-platform C++ library.
- - `ISOBMFF-Dump`: A cross-platform command-line utility for dumping files.
-
-Note that you can also build the library with `make`, on the command line.
-
-### Windows
-
-An VisualStudio solution is provided for convenience, containing the following targets:
-
- - `ISOBMFF Static v120xp`: A static library built with the V120XP toolset (VS 2013)
- - `ISOBMFF Static v140xp`: A static library built with the V140XP toolset (VS 2015)
- - `ISOBMFF Static v141xp`: A static library built with the V141XP toolset (VS 2017)
- - `ISOBMFF DLL v120xp`: A dynamic library (DLL) built with the V120XP toolset (VS 2013)
- - `ISOBMFF DLL v140xp`: A dynamic library (DLL) built with the V140XP toolset (VS 2015)
- - `ISOBMFF DLL v141xp`: A dynamic library (DLL) built with the V141XP toolset (VS 2017)
- - `ISOBMFF-Dump`: A cross-platform command-line utility for dumping files.
-
-### Linux/Unix
-
-The library can be build with `make`, on the command line.
+To build the mp4 dump tool example
+```
+# Create an arbitrary build directory and cd to it.
+mkdir build && cd build
+cmake ..
+cmake --build --target mp4StreamDump
+```
 
 Library Usage
 -------------
